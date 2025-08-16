@@ -220,9 +220,10 @@ export function Typewriter({
   useEffect(() => {
     if (isInView && !isTyping) {
       setIsTyping(true);
+      let typingInterval: ReturnType<typeof setInterval>;
       const timer = setTimeout(() => {
         let i = 0;
-        const typingInterval = setInterval(() => {
+        typingInterval = setInterval(() => {
           if (i < text.length) {
             setDisplayText(text.slice(0, i + 1));
             i++;
@@ -230,11 +231,14 @@ export function Typewriter({
             clearInterval(typingInterval);
           }
         }, speed);
-
-        return () => clearInterval(typingInterval);
       }, delay);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        if (typingInterval) {
+          clearInterval(typingInterval);
+        }
+      };
     }
   }, [isInView, text, delay, speed, isTyping]);
 
