@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Hook untuk intersection observer
+// Hook for intersection observer
 export function useInView(threshold = 0.1) {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ export function useInView(threshold = 0.1) {
   return [ref, isInView] as const;
 }
 
-// Komponen untuk fade in animation
+// Component for fade-in animation
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
@@ -75,7 +75,7 @@ export function FadeIn({
   );
 }
 
-// Komponen untuk staggered animation
+// Component for staggered animation
 interface StaggeredFadeInProps {
   children: React.ReactNode[];
   staggerDelay?: number;
@@ -105,7 +105,7 @@ export function StaggeredFadeIn({
   );
 }
 
-// Komponen untuk scale animation
+// Component for scale animation
 interface ScaleInProps {
   children: React.ReactNode;
   delay?: number;
@@ -130,7 +130,7 @@ export function ScaleIn({ children, delay = 0, className = "" }: ScaleInProps) {
   );
 }
 
-// Komponen untuk slide animation
+// Component for slide animation
 interface SlideInProps {
   children: React.ReactNode;
   direction: "left" | "right";
@@ -165,7 +165,7 @@ export function SlideIn({
   );
 }
 
-// Komponen untuk parallax effect
+// Component for parallax effect
 interface ParallaxProps {
   children: React.ReactNode;
   offset?: number;
@@ -199,7 +199,7 @@ export function Parallax({
   );
 }
 
-// Komponen untuk typing animation
+// Component for typing animation
 interface TypewriterProps {
   text: string;
   delay?: number;
@@ -246,7 +246,7 @@ export function Typewriter({
   );
 }
 
-// Komponen untuk gradient text animation
+// Component for gradient text animation
 interface AnimatedGradientTextProps {
   children: React.ReactNode;
   className?: string;
