@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-// A lightweight route transition wrapper that applies exit animation
-// before navigating to new route via Nav links that call push().
+// Applies exit animation before navigating to a new route when links
+// inside the navigation are clicked.
 export default function RouteTransition({
   children,
 }: {
