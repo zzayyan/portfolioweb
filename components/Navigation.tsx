@@ -26,18 +26,9 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 btn-smooth btn-click"
-          >
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/30"><Image src="/profile.jpg" alt="Profile" width="32" height="32" className="w-full h-full object-cover" /></div>
-            <span className="text-white font-semibold text-lg tracking-wide">Your Name</span>
-          </Link>
-
+        <div className="grid grid-cols-3 items-center h-16">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-12 col-start-2 justify-self-center">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -57,7 +48,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1"
+            className="md:hidden justify-self-end col-start-3 flex flex-col justify-center items-center w-6 h-6 space-y-1"
           >
             <span
               className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
@@ -103,6 +94,3 @@ export default function Navigation() {
     </nav>
   );
 }
-
-
-

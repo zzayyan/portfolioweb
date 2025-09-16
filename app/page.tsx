@@ -6,7 +6,17 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white page-transition">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen px-4 text-center border-b border-white/10">
-        <div className="w-28 h-28 mb-10 rounded-full overflow-hidden border border-white/20"><Image src="/profile.jpg" alt="Profile" width="112" height="112" className="w-full h-full object-cover" priority /></div>
+        <div className="w-64 h-64 rounded-full overflow-hidden border border-white/20">
+          <Image
+            src="/profile.png"
+            alt="Profile"
+            width={300}
+            height={300}
+            className="w-full h-full object-cover object-center"
+            priority
+            unoptimized
+          />
+        </div>
 
         <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 max-w-3xl">
           Brillianta Zayyan Muhammad
@@ -173,5 +183,3 @@ export default function Home() {
     </div>
   );
 }
-
-
