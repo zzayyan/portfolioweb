@@ -3,11 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 
 // Hook for intersection observer
-export function useInView(threshold = 0.1) {
+export function useInView<T extends HTMLElement = HTMLDivElement>(threshold = 0.1) {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<T | null>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
@@ -15,14 +20,10 @@ export function useInView(threshold = 0.1) {
       { threshold }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.unobserve(element);
     };
   }, [threshold]);
 
@@ -272,3 +273,4 @@ export function AnimatedGradientText({
     </span>
   );
 }
+

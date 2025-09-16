@@ -94,7 +94,8 @@ export default function RouteTransition({
 
     nav.addEventListener("click", handleClick);
     return () => nav.removeEventListener("click", handleClick);
-  }, []);
+  }, [router]);
 
   return children as React.ReactElement;
 }
+

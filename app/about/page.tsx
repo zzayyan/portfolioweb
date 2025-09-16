@@ -78,114 +78,71 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="pt-8 pb-4">
+      <header className="pt-8 pb-4 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4">
           <Link
             href="/"
-            className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 mb-8"
+            className="inline-flex items-center text-sm uppercase tracking-[0.3em] text-gray-500 hover:text-white transition-colors duration-200"
           >
-            ← Back to Home
+            <span aria-hidden="true" className="mr-3">&larr;</span>Back to Home
           </Link>
         </div>
       </header>
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-16 space-y-24">
         {/* Hero Section */}
-        <section className="text-center mb-20">
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center text-white text-4xl font-bold">
+        <section className="text-center space-y-6">
+          <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full border border-white/20 text-3xl font-semibold tracking-[0.35em]">
             YM
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Me
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate full-stack developer and UI/UX designer with over 5
-            years of experience creating digital experiences that matter. I love
-            turning complex problems into simple, beautiful, and intuitive
-            solutions.
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight">About Me</h1>
+          <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+            I&apos;m a passionate full-stack developer and UI/UX designer with over five years of experience
+            shaping thoughtful digital products. I love translating complex requirements into calm,
+            intuitive experiences.
           </p>
         </section>
 
         {/* Story Section */}
-        <section className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">My Story</h2>
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  My journey in tech started during university when I built my
-                  first website for a local business. The satisfaction of seeing
-                  code come to life and solving real-world problems instantly
-                  hooked me.
-                </p>
-                <p>
-                  Over the years, I've had the privilege of working with
-                  startups, agencies, and established companies, helping them
-                  build products that users love. I believe great software is
-                  not just about clean code, but about understanding user needs
-                  and creating experiences that delight.
-                </p>
-                <p>
-                  When I'm not coding, you can find me exploring new
-                  technologies, contributing to open-source projects, or sharing
-                  knowledge through blog posts and mentoring. I'm always excited
-                  about the next challenge and the opportunity to learn
-                  something new.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Quick Facts</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-purple-400">🎯</span>
-                  <span className="text-gray-300">5+ years of experience</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-purple-400">💼</span>
-                  <span className="text-gray-300">50+ projects completed</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-purple-400">🌍</span>
-                  <span className="text-gray-300">Remote-first mindset</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-purple-400">🎓</span>
-                  <span className="text-gray-300">Continuous learner</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-purple-400">☕</span>
-                  <span className="text-gray-300">Coffee enthusiast</span>
-                </div>
-              </div>
+        <section className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="space-y-6 text-gray-500 leading-relaxed">
+            <h2 className="text-2xl font-light text-white">My Story</h2>
+            <p>My journey in tech started during university when I built my first website for a local business. The immediate feedback loop of designing, building, and shipping hooked me.</p>
+            <p>Since then I&apos;ve worked with startups, agencies, and established teams to launch products that stay useful beyond their first release. Great software is empathetic: it solves real needs with clarity and care.</p>
+            <p>Outside of client work I contribute to open-source projects, write about design systems, and mentor emerging developers. Continuous learning keeps the craft exciting.</p>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-black/40 p-8 space-y-5">
+            <h3 className="text-xl font-light">Quick Facts</h3>
+            <div className="space-y-4 text-gray-400">
+              <div className="flex items-center justify-between"><span>Experience</span><span>5+ years</span></div>
+              <div className="flex items-center justify-between"><span>Projects</span><span>50+ delivered</span></div>
+              <div className="flex items-center justify-between"><span>Approach</span><span>Remote-first</span></div>
+              <div className="flex items-center justify-between"><span>Mindset</span><span>Always learning</span></div>
+              <div className="flex items-center justify-between"><span>Fuel</span><span>Black coffee</span></div>
             </div>
           </div>
         </section>
 
         {/* Skills Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Skills & Technologies
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <section className="space-y-10">
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl md:text-3xl font-light">Skills & Technologies</h2>
+            <p className="text-gray-500">A toolbox centred on modern web stacks and product collaboration.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
             {skills.map((skillGroup, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6"
+                className="rounded-xl border border-white/10 bg-black/40 p-6 space-y-4"
               >
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {skillGroup.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-lg font-light">{skillGroup.category}</h3>
+                <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-gray-500">
                   {skillGroup.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm"
+                      className="px-3 py-1 border border-white/15"
                     >
                       {tech}
                     </span>
@@ -197,92 +154,78 @@ export default function About() {
         </section>
 
         {/* Experience Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Experience
-          </h2>
-          <div className="space-y-8">
+        <section className="space-y-10">
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl md:text-3xl font-light">Experience</h2>
+            <p className="text-gray-500">Selected roles that shaped how I design and build.</p>
+          </div>
+          <div className="space-y-6">
             {experience.map((job, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-8 hover:bg-white/10 transition-all duration-300"
+                className="rounded-xl border border-white/10 bg-black/40 p-6 space-y-4 hover:bg-white/5 transition-colors"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {job.role}
-                    </h3>
-                    <p className="text-purple-400 font-medium">{job.company}</p>
+                    <h3 className="text-lg font-light text-white">{job.role}</h3>
+                    <p className="text-gray-500">{job.company}</p>
                   </div>
-                  <span className="text-gray-400 text-sm md:text-base">
-                    {job.period}
-                  </span>
+                  <span className="text-sm text-gray-500">{job.period}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
-                  {job.description}
-                </p>
+                <p className="text-gray-500 leading-relaxed">{job.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Education Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Education
-          </h2>
-          <div className="space-y-8">
+        <section className="space-y-10">
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl md:text-3xl font-light">Education</h2>
+            <p className="text-gray-500">Foundations in computer science and human-centred design.</p>
+          </div>
+          <div className="space-y-6">
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-8 hover:bg-white/10 transition-all duration-300"
+                className="rounded-xl border border-white/10 bg-black/40 p-6 space-y-4 hover:bg-white/5 transition-colors"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {edu.degree}
-                    </h3>
-                    <p className="text-purple-400 font-medium">
-                      {edu.institution}
-                    </p>
+                    <h3 className="text-lg font-light text-white">{edu.degree}</h3>
+                    <p className="text-gray-500">{edu.institution}</p>
                   </div>
-                  <span className="text-gray-400 text-sm md:text-base">
-                    {edu.period}
-                  </span>
+                  <span className="text-sm text-gray-500">{edu.period}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
-                  {edu.description}
-                </p>
+                <p className="text-gray-500 leading-relaxed">{edu.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-12">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Let's Build Something Amazing Together
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            I'm always interested in new challenges and opportunities to create
-            meaningful digital experiences.
+        <section className="text-center rounded-xl border border-white/10 bg-black/40 p-12 space-y-6">
+          <h2 className="text-3xl font-light">Let&apos;s build something considered</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            I&apos;m always interested in new challenges and opportunities to craft experiences that feel effortless.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/portfolio"
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1"
+              className="px-8 py-3 rounded-full bg-white text-black uppercase tracking-[0.3em] text-sm btn-click btn-smooth"
             >
-              View My Work
+              View Work
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border-2 border-purple-400 text-purple-400 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300"
+              className="px-8 py-3 rounded-full border border-white/40 text-white uppercase tracking-[0.3em] text-sm hover:bg-white hover:text-black btn-click btn-smooth"
             >
-              Get In Touch
+              Start a Project
             </Link>
           </div>
         </section>
       </div>
     </div>
   );
+
 }

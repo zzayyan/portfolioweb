@@ -89,87 +89,77 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="pt-8 pb-4">
+      <header className="pt-8 pb-4 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4">
           <Link
             href="/"
-            className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 mb-8"
+            className="inline-flex items-center text-sm uppercase tracking-[0.3em] text-gray-500 hover:text-white transition-colors duration-200"
           >
-            ← Back to Home
+            <span aria-hidden="true" className="mr-3">&larr;</span>Back to Home
           </Link>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            My{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Portfolio
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            A collection of my recent work showcasing web development, UI/UX
-            design, and creative problem-solving.
+      <section className="px-4 py-16 border-b border-white/10">
+        <div className="max-w-6xl mx-auto text-center space-y-6">
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight">Portfolio</h1>
+          <p className="text-gray-500 max-w-3xl mx-auto">
+            A selection of product, platform, and experience work focused on clarity, performance, and craft.
           </p>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Featured Projects
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+      <section className="px-4 py-16 border-b border-white/10">
+        <div className="max-w-6xl mx-auto space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h2 className="text-2xl md:text-3xl font-light">Featured projects</h2>
+            <span className="text-sm uppercase tracking-[0.3em] text-gray-500">{projects.filter((project) => project.featured).length} case studies</span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
             {projects
               .filter((project) => project.featured)
               .map((project) => (
                 <div
                   key={project.id}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group"
+                  className="flex flex-col rounded-xl border border-white/10 overflow-hidden bg-black/40 hover:bg-white/5 transition-colors"
                 >
-                  <div className="h-64 bg-gradient-to-br from-purple-500 to-pink-500 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex gap-2 flex-wrap">
-                        {project.technologies.slice(0, 3).map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 bg-black/30 text-white text-xs rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="h-48 bg-white/5 border-b border-white/10"></div>
+                  <div className="p-6 flex-1 flex flex-col space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-light">{project.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold text-white mb-3">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-3">
+                      {project.technologies.slice(0, 4).map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 border border-white/15 text-xs uppercase tracking-[0.2em] text-gray-400"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-4 pt-4 text-sm uppercase tracking-[0.3em]">
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                        className="flex-1 text-center border border-white/20 px-3 py-2 hover:bg-white hover:text-black transition-colors"
                       >
-                        Live Demo
+                        Live
                       </a>
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 text-center px-4 py-2 border-2 border-purple-400 text-purple-400 rounded-lg font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300"
+                        className="flex-1 text-center border border-white/20 px-3 py-2 hover:bg-white hover:text-black transition-colors"
                       >
-                        GitHub
+                        Code
                       </a>
                     </div>
                   </div>
@@ -180,54 +170,31 @@ export default function Portfolio() {
       </section>
 
       {/* All Projects */}
-      <section className="py-12 px-4 bg-black/20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            All Projects
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="px-4 py-16 border-b border-white/10">
+        <div className="max-w-6xl mx-auto space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h2 className="text-2xl md:text-3xl font-light">More work</h2>
+            <span className="text-sm uppercase tracking-[0.3em] text-gray-500">{projects.length} projects</span>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group"
+                className="flex flex-col rounded-xl border border-white/10 bg-black/40 hover:bg-white/5 transition-colors"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm">
-                    {project.description.substring(0, 100)}...
-                  </p>
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    {project.technologies.slice(0, 2).map((tech, index) => (
+                <div className="h-40 bg-white/5 border-b border-white/10"></div>
+                <div className="p-6 flex-1 flex flex-col space-y-4">
+                  <h3 className="text-lg font-light">{project.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em] text-gray-400">
+                    {project.technologies.slice(0, 3).map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
+                        className="px-2 py-1 border border-white/15"
                       >
                         {tech}
                       </span>
                     ))}
-                  </div>
-                  <div className="flex gap-2">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center px-3 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-                    >
-                      Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center px-3 py-2 border border-purple-400 text-purple-400 rounded-lg text-sm font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300"
-                    >
-                      Code
-                    </a>
                   </div>
                 </div>
               </div>
@@ -237,22 +204,19 @@ export default function Portfolio() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
-            Interested in Working Together?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            I'm always open to discussing new projects and opportunities.
-          </p>
+      <section className="px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center rounded-xl border border-white/10 bg-black/40 p-12 space-y-6">
+          <h2 className="text-3xl font-light">Have a project in mind?</h2>
+          <p className="text-gray-500">Let&apos;s collaborate on clear interfaces, resilient systems, and memorable product experiences.</p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-black uppercase tracking-[0.3em] text-sm btn-click btn-smooth"
           >
-            Get In Touch
+            Start a conversation
           </Link>
         </div>
       </section>
     </div>
   );
+
 }
