@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   const skills = [
@@ -94,9 +95,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 py-16 space-y-24">
         {/* Hero Section */}
         <section className="text-center space-y-6">
-          <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full border border-white/20 text-3xl font-semibold tracking-[0.35em]">
-            YM
-          </div>
+          <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border border-white/20"><Image src="/profile.jpg" alt="Profile" width="112" height="112" className="w-full h-full object-cover" priority /></div>
           <h1 className="text-4xl md:text-5xl font-light tracking-tight">About Me</h1>
           <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
             I&apos;m a passionate full-stack developer and UI/UX designer with over five years of experience
@@ -229,3 +228,5 @@ export default function About() {
   );
 
 }
+
+

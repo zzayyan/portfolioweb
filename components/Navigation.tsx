@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -31,9 +32,7 @@ export default function Navigation() {
             href="/"
             className="flex items-center space-x-2 btn-smooth btn-click"
           >
-            <div className="w-8 h-8 rounded border border-white/30 flex items-center justify-center text-white font-semibold text-sm">
-              YM
-            </div>
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/30"><Image src="/profile.jpg" alt="Profile" width="32" height="32" className="w-full h-full object-cover" /></div>
             <span className="text-white font-semibold text-lg tracking-wide">Your Name</span>
           </Link>
 
@@ -104,3 +103,6 @@ export default function Navigation() {
     </nav>
   );
 }
+
+
+
